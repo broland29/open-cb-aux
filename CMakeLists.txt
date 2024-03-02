@@ -5,12 +5,15 @@ project (OpenCBDependencyTest)
 #some magic
 set(CMAKE_AUTOMOC ON)
 #set(CMAKE_INCLUDE_CURRENT_DIR ON)
+INCLUDE(D:/vcpkg/scripts/buildsystems/vcpkg.cmake)  # so that vcpkg installed packages are seen
 
 
 # find packages
 find_package(Qt6Core REQUIRED)
 find_package(Qt6Gui REQUIRED)
 find_package(Qt6Widgets REQUIRED)
+
+find_package(OpenCV REQUIRED)
 
 
 # include files
@@ -33,7 +36,10 @@ file(GLOB_RECURSE SOURCES
 )
 add_executable (OpenCBDependencyTest ${SOURCES})
 
+
 # link libraries
 target_link_libraries(OpenCBDependencyTest Qt::Core)
 target_link_libraries(OpenCBDependencyTest Qt::Gui)
 target_link_libraries(OpenCBDependencyTest Qt::Widgets)
+
+target_link_libraries(OpenCBDependencyTest ${OpenCV_LIBS})
