@@ -1,5 +1,7 @@
 #include "../headers/ImageProcessing.h"
 
+using namespace cv;
+
 
 ImageProcessing::ImageProcessing()
 {

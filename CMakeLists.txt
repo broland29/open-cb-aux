@@ -18,6 +18,8 @@ find_package(OpenCV REQUIRED)
 
 find_package(GTest REQUIRED)
 
+find_package(spdlog REQUIRED)
+
 
 # include files
 set(IP_DIR "${CMAKE_SOURCE_DIR}/ip")
@@ -55,3 +57,5 @@ target_link_libraries(OpenCBDependencyTest Qt::Widgets)
 target_link_libraries(OpenCBDependencyTest ${OpenCV_LIBS})
 
 target_link_libraries(Tests GTest::gtest)
+
+target_link_libraries(OpenCBDependencyTest spdlog::spdlog)
