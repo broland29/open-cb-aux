@@ -2,6 +2,7 @@
 
 #include "MainWindow.h"
 #include <QApplication>
+#include <iostream>
 
 
 class UserApplication

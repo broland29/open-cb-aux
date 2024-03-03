@@ -1,9 +1,17 @@
 #include "../headers/ImageProcessing.h"
 
 
+ImageProcessing::ImageProcessing()
+{
+	utils::logging::setLogLevel(cv::utils::logging::LOG_LEVEL_SILENT);
+}
+
+
 void ImageProcessing::test()
 {
-	Mat_<Vec3b> img = imread("C:\\Users\\balin\\source\\repos\\OpenCBDependencyTest\\img.png", IMREAD_COLOR);
+	std::cout << "Hello from ImageProcessing!" << std::endl;
+
+	Mat_<Vec3b> img = imread("C:\\open-cb-aux\\img.png", IMREAD_COLOR);
 	if (img.empty())
 	{
 		std::cout << "Could not open img.png" << std::endl;
